@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://ajay-bhargava.github.io//sitemap.xml
+Sitemap: https://ajay-bhargava.github.io/sitemap.xml
