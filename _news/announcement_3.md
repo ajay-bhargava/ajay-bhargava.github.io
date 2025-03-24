@@ -5,4 +5,4 @@ date: 2022-09-01 07:59:00-0400
 inline: true
 ---
 
-Built a novel YOLOv5 Sagemaker Pipeline.
+Built a novel real-time slip and fall detection model that was light-years ahead of the field 💃
