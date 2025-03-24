@@ -1,4 +1,5 @@
 # Ajay Bhargava Ph.D.
+
 ## Table Of Contents
 
 - [Ajay Bhargava Ph.D.](#ajay-bhargava-phd)
@@ -111,7 +112,6 @@ Photo formatting is made simple using [Bootstrap's grid system](https://getboots
     <img src="readme_preview/photos-screenshot.png" width="75%">
   </a>
 </p>
-
 
 ## License
 
