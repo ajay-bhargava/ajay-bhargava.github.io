@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: <b>Bench Scientist.</b> <b>Data Scientist</b>. ML Engineer. Father.
+subtitle: <b>Bench Scientist.</b> <b>ML Researcher</b>. <b>Software Engineer</b>. Father.
 
 profile:
   align: right
