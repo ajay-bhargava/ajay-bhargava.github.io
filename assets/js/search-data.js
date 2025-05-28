@@ -91,7 +91,7 @@ ninja.data = [{
         title: 'X',
         section: 'Socials',
         handler: () => {
-          window.open("https://twitter.com/ajay_bhargava", "_blank");
+          window.open("https://twitter.com/129515", "_blank");
         },
       },{
       id: 'light-theme',
