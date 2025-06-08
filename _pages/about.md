@@ -25,12 +25,15 @@ latest_posts:
   limit: 1 # leave blank to include all the blog posts
 ---
 
-I am a professionally trained scientist who has become extremely adept at identifying and then solving low hanging-fruit problems.
+You want to work with me because I'm a unicorn scientist and software engineer who has proven he can excel in both fields. 
 
-I thrive in autonomously solving unstructured problems because my [Ph.D. scholarship with Erik Sahai](https://www.crick.ac.uk/) granted me rigorous scientific discipline with a particular penchant for video acquisition & analysis using ML/AI.
+After a successful career as a bench biochemist, I did my [Ph.D. with Erik Sahai](https://www.crick.ac.uk/). There I applied my rigorous scientific discipline and leveraged ML/AI to write the rulebook of spatiotemporal clonal dynamics from the perspective of physical law. To study anything empirically in space and time passively at high resolution in a multimodal image based system in and out of the body you need to get cracked at image analysis, and so I picked up a ton of computer vision skills.
 
-I've made ML/AI tools at amazing pharmaceutical companies such as [GSK](http://gsk.ai) & [Regeneron](http://www.regeneron.com) to derive meaning from healthcare imaging data.
+I then successfully transitioned my skills into multiple professional roles:
 
-More than writing ML/AI code for healthcare, I've produced ML/AI pipelines at video analytics technology companies like [Actuate](http://actuate.ai) to deploy production level, serverless, real-time gun/intruder, and novel slip/fall detection AI algorithms to a network of 20K+ cameras.
+1. I've made ML/AI tools at amazing pharmaceutical companies such as [GSK](http://gsk.ai) & [Regeneron](http://www.regeneron.com) to derive meaning from healthcare imaging data.
+2. I've produced ML/AI pipelines at video analytics technology companies like [Actuate](http://actuate.ai) to deploy production level, serverless, real-time gun/intruder, and novel slip/fall detection AI algorithms to a network of 20K+ cameras.
+3. I became a great data architect and data engineer at [TetraScience](https://www.tetrascience.com/) to build a data platform that can ingest, store, and analyze 100s of terabytes of data from thousand of scientific instruments.
+4. I then founded [Bynd.Bio](https://www.bynd.bio) as the technical and scientific founder to bring REST API driven experiment execution to every CRO in the world. 
 
-> My general interests are at the intersection of computer vision, explainable AI, model quantization, and model deployment. In short, I want to bring **useful** real-time vision AI to the masses.
+> My general interests are at the intersection of computer vision, AI software engineering, entrepreneurship, and biotechnology. In short, I want to bring **useful** and **delightful** AI driven products to the masses.
