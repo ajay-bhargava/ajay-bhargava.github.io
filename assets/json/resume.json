@@ -23,7 +23,7 @@
       "url": "",
       "startDate": "2024-10",
       "endDate": "2025-06",
-      "summary": "Started a company to totally change how lab experiments are done REST APIs.",
+      "summary": "Started a company to totally change how remote lab experiments are executed using REST APIs.",
       "highlights": [
         "Created smart AI tools to organize lab work, including pricing and protocols, into easy-to-use data models.",
         "Built a full app using Next.JS, Typescript, MongoDB, and OpenAI.",
@@ -114,8 +114,8 @@
         "Was featured on company blog and podcase.",
         "Built a multi-modal health analytics tool that studied six months of sleep and glucose data."
       ],
-      "startDate": "2025-04",
-      "endDate": "2025-10",
+      "startDate": "2024-04",
+      "endDate": "2024-10",
       "url": "https://www.fulcradynamics.com/magazine/are-your-devices-trying-to-tell-you-something-unlocking-personal-health-insights-through-data-with-data-scientist-ajay-bhargava"
     },
     {
