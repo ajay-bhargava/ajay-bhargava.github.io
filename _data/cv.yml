@@ -2,96 +2,83 @@
   type: map
   contents:
     - name: Full Name
-      value: Albert Einstein
-    - name: Date of Birth
-      value: 14th March 1879
+      value: Ajay Bhargava, Ph.D.
+    - name: Email
+      value: bhargava.ajay@gmail.com
+    - name: Mobile
+      value: +1-908-636-4149
+    - name: Location
+      value: New York, NY, USA
     - name: Languages
-      value: English, German
+      value: English, Hindi
 
 - title: Education
   type: time_table
   contents:
-    - title: PhD
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1905
+    - title: Doctorate in Computational Biology
+      institution: King's College London at the Francis Crick Institute, London, UK
+      year: Sept 2016 - Dec 2020
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Federal teaching diploma
-      institution: Eidgenössische Technische Hochschule, Zurich, Switzerland
-      year: 1900
-      description:
-        - Description 1.
-        - Description 2.
+        - Designed a mouse lung tumor model and determined the underlying biophysics behind the unequal expansion of genetically heterogeneous subclones.
+        - Performed multi-modal spatiotemporal image analysis using custom image processing routines in R.
 
 - title: Experience
   type: time_table
   contents:
-    - title: Professor of Theoretical Physics
-      institution: Institute for Advanced Study, Princeton University
-      year: 1933 - 1955
+    - title: Senior Data Architect
+      institution: TetraScience, New York, NY
+      year: Oct 2022 - Apr 2024
       description:
-        - Description 1.
-        - Description 2.
-        - title: Description 3.
-          contents:
-            - Sub-description 1.
-            - Sub-description 2.
-    - title: Visiting Professor
-      institution: California Institute of Technology, Pasadena, California, US
-      year: 1933
+        - Led technical talk track for a $1M+ TCV deal with Takeda Pharmaceuticals in Japan.
+        - Conducted SME interviews and aligned solutions with product roadmap.
+        - Built generative AI agent framework for chatbot data visualization on AWS Bedrock.
+        - Guided ElasticSearch integration for data querying and visualization.
+
+    - title: Senior Data Scientist
+      institution: Actuate AI, New York, NY
+      year: Oct 2021 - Oct 2022
       description:
-        - Description 1.
-        - Description 2.
+        - Designed Slip and Fall YOLO segmentation model; reduced insurance risk by 5%.
+        - Built OCR models for Army Futures Command.
+        - Developed visual MLOps tools for model interpretability.
+        - Compiled YOLO models with AWS Neuron SDK for Inf1; boosted FPS to 200+.
 
-    - title: Director
-      institution: Kaiser Wilhelm Institute for Physics, Berlin, Germany.
-      year: 1917-1933
-
-    - title: Professor of Theoretical Physics
-      institution: Karl-Ferdinand University, Prague, Czechoslovakia
-      year: 1911 - 1917
+    - title: Associate Scientist - Imaging Machine Learning
+      institution: Regeneron Pharmaceuticals, New York, NY
+      year: Oct 2020 - Oct 2021
       description:
+        - Performed image analysis for clinical and non-clinical studies.
+        - Developed ML tools to stratify NASH/NAFLD patients from pathology images.
+        - Built image registration tools for 3D histopathology and micro-CT.
 
-    - title: Associate Professor of Theoretical Physics
-      institution: University of Zurich, Zurich, Switzerland
-      year: 1909 - 1911
+    - title: AI/ML Researcher
+      institution: GlaxoSmithKline (GSK), London, UK
+      year: Mar 2020 - Oct 2020
+      description:
+        - Developed GAN-based virtual staining model for tissue samples.
+        - Combined sub-pixel registration with GANs for pixel-to-pixel image translation.
 
 - title: Open Source Projects
   type: time_table
   contents:
-    - title: <a href="https://github.com/alshedivat/al-folio">al-folio</a>
-      year: 2015-now
-      description: A beautiful, simple, clean, and responsive Jekyll theme for academics.
+    - title: Hugging Face Hackathon
+      year: 2023
+      description: Streamlit app using RAG and hybrid Pinecone search to retrieve pre-clinical toxicology PDFs using PyMuPDF.
 
-- title: Honors and Awards
-  type: time_table
-  contents:
-    - year: 1921
-      items:
-        - Nobel Prize in Physics
-        - Matteucci Medal
-    - year: 2029
-      items:
-        - Max Planck Medal
+    - title: CI/CD Deployment Factory
+      year: 2023
+      description: FastAPI AWS deploy pipeline using GitHub Actions, Docker/ECR, Serverless Framework, and API Gateway.
 
-- title: Academic Interests
-  type: nested_list
-  contents:
-    - title: Topic 1.
-      items:
-        - Description 1.
-        - Description 2.
-    - title: Topic 2.
-      items:
-        - Description 1.
-        - Description 2.
-
-- title: Other Interests
+- title: Skills
   type: list
   contents:
-    - <u>Hobbies:</u> Hobby 1, Hobby 2, etc.
+    - AWS Bedrock, AWS Sagemaker, Cloudwatch, GCP, AWS
+    - Git, CI/CD, Docker, Serverless Framework
+    - Python3, FastAPI, OCR, SQL
+    - Pytorch, R, LaTeX, Streamlit
+    - ElasticSearch, Qdrant, Pinecone, LlamaIndex
+
+- title: Publications
+  type: list
+  contents:
+    - <a href="https://scholar.google.com/citations?user=Cr4HEHYAAAAJ&hl=en">Google Scholar Profile</a>
