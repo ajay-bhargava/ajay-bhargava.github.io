@@ -34,8 +34,8 @@
       "name": "TetraScience",
       "position": "Senior Data Architect",
       "url": "",
-      "startDate": "2022-10-01",
-      "endDate": "2024-04-01",
+      "startDate": "2022-10",
+      "endDate": "2024-04",
       "summary": "Led enterprise technical solutions and AI agent platform development for large pharma clients.",
       "highlights": [
         "Led $1M+ TCV engagement with Takeda Pharmaceuticals.",
@@ -48,8 +48,8 @@
       "name": "Actuate AI",
       "position": "Senior Data Scientist",
       "url": "",
-      "startDate": "2021-10-01",
-      "endDate": "2022-10-01",
+      "startDate": "2021-10",
+      "endDate": "2022-10",
       "summary": "Designed real-time object detection systems at scale across security networks worldwide.",
       "highlights": [
         "Built slip-and-fall YOLO model deployed in SL Green properties.",
@@ -62,8 +62,8 @@
       "name": "Regeneron Pharmaceuticals",
       "position": "Associate Scientist - Imaging Machine Learning",
       "url": "",
-      "startDate": "2020-10-01",
-      "endDate": "2021-10-01",
+      "startDate": "2020-10",
+      "endDate": "2021-10",
       "summary": "Delivered ML and image analysis as part of Regeneron's core scientific computing facility.",
       "highlights": [
         "Analyzed lysosome localization, myofiber CSA using U-Net.",
@@ -75,8 +75,8 @@
       "name": "GlaxoSmithKline (GSK)",
       "position": "AI/ML Researcher",
       "url": "",
-      "startDate": "2020-03-01",
-      "endDate": "2020-10-01",
+      "startDate": "2020-03",
+      "endDate": "2020-10",
       "summary": "Developed GAN pipeline for virtual staining of pathology slides.",
       "highlights": [
         "Built GAN + subpixel alignment model for in-silico H&E staining."
