@@ -23,14 +23,25 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
-        },{id: "nav-projects",
-          title: "projects",
-          description: "A collection of the things I&#39;ve shipped. 🚀",
+        },{id: "nav-resume",
+          title: "resume",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/projects/";
+            window.location.href = "/cv/";
           },
-        },{id: "books-the-godfather",
+        },{id: "post-great-questions-are-the-predicate-to-scalable-execution",
+      
+        title: "Great questions are the predicate to scalable execution",
+      
+      description: "Reflections on mindset, infrastructure, and scientific velocity—from the Crick to startup biotech.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/scalable-execution/";
+        
+      },
+    },{id: "books-the-godfather",
           title: 'The Godfather',
           description: "",
           section: "Books",handler: () => {
@@ -41,17 +52,17 @@ ninja.data = [{
           section: "News",},{id: "news-i-worked-alongside-soldiers-to-develop-ai-to-make-soldiers-more-operationally-efficient",
           title: 'I worked alongside soldiers to develop AI to make soldiers more operationally efficient....',
           description: "",
-          section: "News",},{id: "news-built-a-novel-real-time-slip-and-fall-detection-model-that-was-light-years-ahead-of-the-field",
-          title: 'Built a novel real-time slip and fall detection model that was light-years ahead...',
+          section: "News",},{id: "news-built-a-novel-real-time-slip-and-fall-detection-model-that-is-light-years-ahead-of-the-field",
+          title: 'Built a novel real-time slip and fall detection model that is light-years ahead...',
           description: "",
-          section: "News",},{id: "news-flew-to-️-and-worked-like-hell-to-close-a-1m-tcv-deal-as-a-pre-sales-solution-architect",
-          title: 'Flew to ⛩️ and worked like hell to close a $1M TCV deal...',
+          section: "News",},{id: "news-closed-a-1m-tcv-deal-as-a-pre-sales-solution-architect-in-japan-️",
+          title: 'Closed a $1M TCV deal as a pre-sales solution architect in Japan. ⛩️...',
           description: "",
           section: "News",},{id: "news-co-founded-bynd-bio-to-help-cro-s-do-science-faster-for-others",
           title: 'Co-founded bynd.bio to help CRO’s do science faster for others. 🧫🧑‍🔬🧪',
           description: "",
-          section: "News",},{id: "news-decided-to-10x-my-full-stack-ai-engineering-skills-by-joining-fractal-bootcamp",
-          title: 'Decided to 10x my full-stack AI engineering skills by joining Fractal Bootcamp. 🚀...',
+          section: "News",},{id: "news-10x-ed-my-full-stack-ai-engineering-skills-at-the-fractal-ai-engineering-accelerator",
+          title: '10x’ed my full-stack AI engineering skills at the Fractal AI Engineering Accelerator. 🤖...',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
