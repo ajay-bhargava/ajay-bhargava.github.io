@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-great-questions-are-the-predicate-to-scalable-execution",
+        },{id: "post-tracking-the-precise-dropoff-location-of-a-delivery-in-your-building",
+      
+        title: "Tracking the precise dropoff location of a delivery in your building.",
+      
+      description: "Reflections on building a time-series classification model that uses the data from the 9-DoF sensor on your phone.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/timeseries-machine-learning/";
+        
+      },
+    },{id: "post-great-questions-are-the-predicate-to-scalable-execution",
       
         title: "Great questions are the predicate to scalable execution",
       
