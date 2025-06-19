@@ -14,9 +14,9 @@ toc:
 
 # Tl;DR
 
-I built a time-series classification model that could classify whether or not a person was indoors or outdoors based on the data collected by the 9-DoF sensor on their phone. The github repository is [here](https://github.com/ajay-bhargava/extrasensory).
+I built a time-series classification model that could classify whether or not a person was indoors or outdoors based on the data collected by the 9-DoF sensor on their phone because I was excited to apply to a senior machine learning engineer role at [Doorstep.ai](http://www.doorstep.ai). Unfortunately, the company emphasized Leetcode and I did not pass the coding round because i couldn't code up a solution to a palindrome substring problem. I wrote this project in the span of 3 days over the weekend. The deployable model and steps to replicate the training of the model are [here](https://github.com/ajay-bhargava/extrasensory).
 
-# Things you can do with time-series data
+# You can just do things with time-series data
 
 It is no secret that I love time-series datastreams and I think humanity should get really good at reading, understanding, leveraging, and making predictions from time-series data. 
 
@@ -54,6 +54,14 @@ print(tensor.shape)
 Where the first dimension is the sample you're looking at and the second and third dimension could be the number of time-stamps collected and the number of features collected at each time-stamp. Consider that for each feature you may have a `np.float` at each dimensional position. If you were to place that entire tensor into the context window of a model, you'd very easily overwhelm the model's window to accept your request. In fact, this is exactly why Google and others developed vision langugage models (vLLM's) to handle dealing with time-series data in a way that's more information efficient. I discuss this here: 
 
 {% twitter https://x.com/0x1F9ED/status/1886227564173111657  align=center %}
+
+## Determine slip and fall events from camera feeds
+
+I've devised approaches to determine slip and fall events from camera feeds. Security cameras are a pecularity for traditional approaches to detect falling down or slipping. This is because the field of fiew and distance from camera is so variable. You end up getting a dataset of people who are either large, medium or tiny. Not being able to capture the focal points of a human body (e.g. face, shoulders, knees, etc.,) makes it hard to deploy traditional pose-estimation models which means you can't detect falling down.  
+
+Furthermore, another caveat with working with security cameras is that in order to emphasize detection speed, it is favorable to use YOLO models. These usually require bounding boxes of people as training data. I had a ton of this data on hand while working at Actuate. As a prototype project, I thought I could use a bounding-box to pixelwise estimation model to grok the instance mask of a person. Then, using this data I further trained up a YOLACT model to track the person's instance mask over time. Using mask moments I was able to calculate the principle axis of the mask approximated over a time window then train up a LSTM to classify if a person was standing or falling. 
+
+{% include figure.liquid loading="eager" path="assets/img/slip-and-fall.png" class="img-fluid" %}
 
 ## Learn why cancer grows the way it does
 
@@ -313,3 +321,210 @@ labels = np.concatenate(
 ) 
 ```
 
+# Building the model
+
+Its my belief that unless you're writing a machine learning model from scratch (which you're probably not going to be doing if you're supporting most business cases) you're going to be using a library to build your model. This has caveats. The caveats being that you're beholden to the library's design choices and support requirements to deploy your model. That being said, there are some pretty robust model libraries out there, and `tsai` is no exception.  Training with `tsai` is easy because it is built ontop of `fastai`. Because of this, and recent developements to the `TSClassifier` class, deploying a model is as simple as running the code below. I will note there are a few caveats and these will be discussed. 
+
+## The `tsai` library
+
+Configuring a `TSClassifier` requires a dictionary with some typical parameters in any machine learning job: 
+
+```python
+# Configruation Dictionary
+config = {
+    "tfms": [None, TSClassification],
+    "batch_tfms": [TSStandardize(by_sample=True)],
+    "metrics": accuracy,
+    "arch": "InceptionTimePlus",
+    "bs": [64,128],
+    "lr": 1e-4,
+    "epochs": 5,
+}
+```
+
+I chose to split my data into test and train at the point of the model training. I prefer to keep my data as tight as possible to the model training process. 
+
+```python
+train_index, val_index = train_test_split(np.arange(len(dataset)), test_size=0.2, random_state=42, stratify=labels)
+
+# Splits
+splits = (list(train_index), list(val_index))
+```
+
+Then finally training the library is as simple as running the code below. 
+
+```python
+# Create Model
+learn = TSClassifier(
+    X=dataset, 
+    y=labels, 
+    splits=splits, 
+    tfms=config["tfms"],
+    batch_tfms=config["batch_tfms"],
+    metrics=config["metrics"],
+    arch=config["arch"],
+    bs=config["bs"],
+    cbs=[WandbCallback(log_preds=False, log_model=False, dataset_name="extrasensory-train")],
+)
+
+# Train Model
+learn.fit_one_cycle(config["epochs"], config["lr"])
+```
+
+## `InceptionTimePlus` Intuition
+
+I was at UofT doing my Masters in Biochemistry around the same time that Ilya Sutskever was working on the original AlexNet. There is a lot of influence from the original AlexNet in my own understanding of NN architectures and my background and interest in computer vision partly stems from this. I was therefore excited to use `InceptionTimePlus` as a model architecture for this project. Indeed the [paper](https://arxiv.org/pdf/1909.04939) does pay quite a bit of homage to the original AlexNet when drawing parallels between the two model architectures. 
+
+There are many ways to classify time-series data. Most of the approaches are interested in finding features (shapelets, spare-representations, etc.,) that are invariant to the time-index of the time-series. 
+
+1. Nearest Neighbor + NN-DTW: The NN-DTW approach is well described in this [blog](https://medium.com/walmartglobaltech/time-series-similarity-using-dynamic-time-warping-explained-9d09119e48ec) post.
+
+2. BOSS: Breaks the time-series into symbolic features via discrete fourier transform. Then discretizes the features into bins, and if I'm getting this right, measures the euclidean distance between the features. 
+ 
+`InceptionTime` works in a similar way as `AlexNet`. You have a sliding window of `m` filters on the multivariate time-series. In the case of my dataset its 225 features over 5 minutes. What this does is that it reduces the dimensionality of the time-series from 225 features to the number of filters. This "bottlenecking" reduces the multi-variate features of the feature space (that's accelerometer, gyroscope etc.,) to a set of `m` filters. 
+
+{% include figure.liquid loading="eager" path="assets/img/InceptionTime-Architecture.png" class="img-fluid" %}
+
+You can think of this the same way as a multi-dimensional image. If you've ever worked in science and have used the `.czi` format from Zeiss you know that a typical fluorescence image can be a 4-30 dimensional image based on the number of channels collected at various filter-band passes or excitations based on your laser. Time series works the same way in the multi-variate space. The time dimension is only collapsed in the very last layer. What happens there is just some pooling of the time-series against the collapsed `m` features from the sliding window over the time-series. This is also why making sure you choose a temporal window that's cleanly defined is so important. 
+
+There are obviously different are more interesting filters one could conjure up for time-series data but this method is a good starting point and a good model architecture. 
+
+## Weights and Biases Callbacks
+
+You're probably wondering what is this `WandbCallback`? Its a `fastai` callback that logs the training and validation metrics to [Weights and Biases](https://wandb.ai/site). I've found this to be a very useful tool for tracking the training of my models. 
+
+```python
+# Create Model
+with wandb.init(project="extrasensory-train", name="extrasensory-train"):
+    learn = TSClassifier(
+        cbs=[WandbCallback(log_preds=False, log_model=False, dataset_name="extrasensory-train")],
+    )
+```
+
+Tracking training runs and validation metrics is then possible on [wandb.ai](https://wandb.ai/bhargava-ajay/extrasensory-train?nw=nwuserbhargavaajay) which you can find here.  
+
+# Running inference on using the model
+
+Running inference (owing to the amazing work of the `tsai` library) is as simple as running the code below. 
+
+```python
+@app.cls(
+    image=inference_image, 
+    gpu="any",
+    scaledown_window=60 * 10,
+    volumes={"/weights": weights_volume},
+)
+class Inference:
+    @modal.enter()
+    def start(self):
+        wandb.init(mode="disabled")
+        self.model = load_learner(f"/weights/{MODEL_ID}", cpu=False)
+        
+    @modal.method()
+    async def predict(self, data: np.ndarray):
+        return self.model.get_X_preds(data, with_input=False)
+```
+
+You can call this from an ASGI remotely as follows: 
+
+```python
+####
+# Request Model
+####
+
+class Request(BaseModel):
+    array: str
+   
+class Result(BaseModel):
+    probabilities: list
+    predicted_class: str
+    message: str
+    
+####
+# ASGI Application
+####
+
+@app.function(
+    image=asgi_image,
+    max_containers=2
+)
+@modal.asgi_app(label="extrasensory-inference")
+def extrasensory_inference():
+    application = FastAPI(title="Extrasensory Inference", description="Inference for the Extrasensory Model")
+    
+    # Inference endpoint
+    @application.post("/predict", response_model=Result)
+    async def predict(request: Request = Body()):
+        
+        bytes = base64.b64decode(request.array)
+        array = np.load(io.BytesIO(bytes))
+        
+        if array.shape != (1, 5, 225):
+            return {"error": "Invalid array shape"}
+
+        # Make prediction - don't await the remote call
+        response = Inference().predict.remote(array) # type: ignore
+        
+        # Unpack the tuple and convert tensor to numpy
+        probs_tensor, _, class_label = response
+        probabilities = probs_tensor.cpu().numpy().tolist()
+        predicted_class = class_label[0]
+        
+        return Result(
+            probabilities=probabilities,
+            predicted_class=predicted_class,
+            message="Success"
+        )
+    
+    return application
+```
+
+It will return a JSON object with the probabilities of the predicted class and the predicted class label. 
+
+```json
+{
+    "probabilities": [0.9999999403953552, 4.964479923248291e-07],
+    "predicted_class": "outside",
+    "message": "Success"
+}
+```
+
+# Caveats
+
+## `wandb Callbacks` 
+
+One very peculiar thing I noticed and spent a needless amount of time on was the need to have the `wandb` callback or at least the `wandb` library instantiated before the prediction model was instantiated. I thought it was weird that the pickled model required the `wandb` library. This might've been due to the fact that one of the model callbacks was a `wandb` callback. 
+
+```python
+wandb.init(mode="disabled")
+```
+
+## Sparsity of the dataset 
+
+The `Extrasensory` dataset was sampled at a rate of 1 minute. Events such as walking between inside and outside happen at a much faster frequency than 1 minute. This means that the model and its ability to generalize for indoor versus outdoor classification might be limited. Ideally you'd want a sampling frequency of at least once per second or even faster. This would pose challenges from a battery life perspective and potentially pose challenges if the data was uploaded to the cloud when the phone is in wifi range. 
+
+# Gushing over Modal
+
+Its no secret that I gush over Modal. I particularly liked the ability to use `modal.CloudBucketMount` to mount a S3 bucket as a local path and then a `modal.Volume` to mount a volume to the container. Container definition on Modal is just so dead simple. Defining infrastructure should be this easy: 
+
+
+```python
+@app.function(
+    volumes={
+        "/mnt/": modal.CloudBucketMount(
+            bucket_name=BUCKET_NAME,
+            secret=CREDENTIALS
+        ),
+        "/weights": weights,
+    },
+    timeout=60 * 60 * 3,
+    secrets=[WANDB_SECRET],
+    gpu="any"
+)
+```
+
+Some of my next learnings are going to be how to chain all these files together into a single pipeline. It would be cool to just run one script to download the data, train the model, and deploy the model. 
+
+# Conclusion
+
+Even though I didn't get the job at Doorstep.ai, I am happy to have had the opportunity to work on this project. I really love working on time-series data and I'm excited for others to take note of the codebase for their own projects. 
