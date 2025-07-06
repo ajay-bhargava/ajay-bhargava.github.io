@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-tracking-the-precise-dropoff-location-of-a-delivery-in-your-building",
+        },{id: "post-uniting-the-digital-and-visual-world-with-context",
+      
+        title: "Uniting the digital and visual world With Context",
+      
+      description: "A call to action to unite the digital and visual world with AI agents and AR glasses.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/uniting-visual-world/";
+        
+      },
+    },{id: "post-tracking-the-precise-dropoff-location-of-a-delivery-in-your-building",
       
         title: "Tracking the precise dropoff location of a delivery in your building.",
       
