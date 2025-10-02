@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-uniting-the-digital-and-visual-world-with-context",
+        },{id: "post-one-more-ai-agent-and-you-39-ll-be-clairvoyant-i-promise",
+      
+        title: "One more AI agent and you&#39;ll be Clairvoyant, I promise.",
+      
+      description: "Building Clairvoyant - a real-time voice transcription and intelligent context-aware assistant for AR glasses that captures audio, processes it through AI agents, and provides personalized responses.",
+      section: "Posts",
+      handler: () => {
+        
+          window.location.href = "/blog/2025/clairvoyant/";
+        
+      },
+    },{id: "post-uniting-the-digital-and-visual-world-with-context",
       
         title: "Uniting the digital and visual world With Context",
       
@@ -85,6 +96,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-10x-ed-my-full-stack-ai-engineering-skills-at-the-fractal-ai-engineering-accelerator",
           title: '10x’ed my full-stack AI engineering skills at the Fractal AI Engineering Accelerator. 🤖...',
+          description: "",
+          section: "News",},{id: "news-formed-with-context-llc-and-went-all-in-on-building-ai-glasses-apps",
+          title: 'Formed With Context LLC and went all in on building AI glasses apps....',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',

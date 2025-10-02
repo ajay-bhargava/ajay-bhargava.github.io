@@ -1,0 +1,456 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> One more AI agent and you'll be Clairvoyant, I promise. | Ajay Bhargava Ph.D. </title> <meta name="author" content="Ajay Bhargava Ph.D."> <meta name="description" content="Building Clairvoyant - a real-time voice transcription and intelligent context-aware assistant for AR glasses that captures audio, processes it through AI agents, and provides personalized responses."> <meta name="keywords" content="ai-enginer, ml-engineer, full-stack-engineer, fractional-cto, bench-scientist"> <link rel="stylesheet" href="/assets/css/bootstrap.min.css?a4b3f509e79c54a512b890d73235ef04"> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table.min.css" integrity="sha256-uRX+PiRTR4ysKFRCykT8HLuRCub26LgXJZym3Yeom1c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="/assets/css/academicons.min.css?f0b7046b84e425c55f3463ac249818f5"> <link defer rel="stylesheet" href="/assets/css/scholar-icons.css?62b2ac103a88034e6882a5be5f3e2772"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%F0%9F%A4%94&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/assets/css/main.css?d41d8cd98f00b204e9800998ecf8427e"> <link rel="canonical" href="https://ajay-bhargava.github.io/blog/2025/clairvoyant/"> <script src="/assets/js/theme.js?9a0c749ec5240d9cda97bc72359a72c0"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> Ajay Bhargava Ph.D. </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item active"> <a class="nav-link" href="/blog/">blog </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">resume </a> </li> <li class="nav-item"> <button id="search-toggle" title="Search" onclick="openSearchModal()"> <span class="nav-link">ctrl k <i class="ti ti-search"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">One more AI agent and you'll be Clairvoyant, I promise.</h1> <p class="post-meta"> Created on October 01, 2025 </p> <p class="post-tags"> <a href="/blog/2025"> <i class="fa-solid fa-calendar fa-sm"></i> 2025 </a>   ·   <a href="/blog/tag/ar"> <i class="fa-solid fa-hashtag fa-sm"></i> ar</a>   <a href="/blog/tag/ai"> <i class="fa-solid fa-hashtag fa-sm"></i> ai</a>   <a href="/blog/tag/agents"> <i class="fa-solid fa-hashtag fa-sm"></i> agents</a>   <a href="/blog/tag/clairvoyant"> <i class="fa-solid fa-hashtag fa-sm"></i> clairvoyant</a>   <a href="/blog/tag/voice"> <i class="fa-solid fa-hashtag fa-sm"></i> voice</a>   <a href="/blog/tag/transcription"> <i class="fa-solid fa-hashtag fa-sm"></i> transcription</a>   <a href="/blog/tag/memory"> <i class="fa-solid fa-hashtag fa-sm"></i> memory</a>   ·   <a href="/blog/category/machine-learning-posts"> <i class="fa-solid fa-tag fa-sm"></i> machine-learning-posts</a> </p> </header> <article class="post-content"> <div id="table-of-contents"> <ul id="toc" class="section-nav"> <li class="toc-entry toc-h2"><a href="#what-did-i-make">What did I make?</a></li> <li class="toc-entry toc-h2"> <a href="#my-software-design-philosophy-in-ai-glasses">My software design philosophy in AI Glasses</a> <ul> <li class="toc-entry toc-h3"><a href="#write-apis-for-hardware-access-boost-iteration-speed">Write API’s for hardware access, boost iteration speed.</a></li> <li class="toc-entry toc-h3"><a href="#stay-away-from-swift-use-platforms-that-house-your-ai-glasses-app-instead">Stay away from Swift. Use platforms that house your AI glasses app instead.</a></li> <li class="toc-entry toc-h3"> <a href="#mind-your-latency">Mind your latency</a> <ul> <li class="toc-entry toc-h4"><a href="#dont-listen-to-everything-you-hear">Don’t listen to everything you hear</a></li> <li class="toc-entry toc-h4"><a href="#use-lightning-fast-ai-models-for-your-ai-agents">Use lightning fast AI models for your AI agents</a></li> <li class="toc-entry toc-h4"><a href="#use-fast-ai-tools">Use fast AI tools</a></li> </ul> </li> <li class="toc-entry toc-h3"><a href="#temper-user-frustration-of-latency-with-loading-hints">Temper user frustration of latency with loading hints</a></li> </ul> </li> <li class="toc-entry toc-h2"> <a href="#advice-for-vibe-coding-a-personal-assistant">Advice for vibe coding a personal assistant</a> <ul> <li class="toc-entry toc-h4"> <a href="#create-a-router-that-an-llm-can-expand-upon">Create a router that an LLM can expand upon</a> <ul> <li class="toc-entry toc-h5"><a href="#use-baml-for-defining-your-ai-agents-thats-it">Use BAML for defining your AI agents. That’s it.</a></li> </ul> </li> <li class="toc-entry toc-h4"><a href="#create-a-separation-of-concerns-for-your-tools-with-handlers">Create a separation of concerns for your tools with handlers</a></li> <li class="toc-entry toc-h3"><a href="#then-write-agentsmd-andor-cursorrules">Then write AGENTS.md and/or ./cursor/rules</a></li> <li class="toc-entry toc-h3"><a href="#accelerate-using-cli-or-background-agents">Accelerate using CLI or background agents</a></li> </ul> </li> <li class="toc-entry toc-h2"> <a href="#what-excites-me-moving-forward">What excites me moving forward?</a> <ul> <li class="toc-entry toc-h3"><a href="#personal-memory-and-memory-reasoning">Personal memory and memory reasoning</a></li> <li class="toc-entry toc-h3"><a href="#devices-with-beam-forming-microphones">Devices with beam forming microphones</a></li> <li class="toc-entry toc-h3"><a href="#improving-latency-in-ai-models">Improving latency in AI models</a></li> <li class="toc-entry toc-h3"><a href="#diarization">Diarization</a></li> <li class="toc-entry toc-h3"><a href="#shared-human-memory">Shared human memory</a></li> </ul> </li> <li class="toc-entry toc-h2"><a href="#conclusion">Conclusion</a></li> </ul> </div> <hr> <div id="markdown-content"> <blockquote> <p><strong>Clairvoyance</strong> /ˌklerˈvoiən(t)s/ <em>noun</em> The supposed faculty of perceiving things or events beyond normal sensory contact.</p> </blockquote> <p>I’m fascinated by the idea of clairvoyance. The word itself literally means “clear-seeing.” In modern usage, it’s tied to paranormal or spiritual vision, and pop culture often reduces it to pre-cognition. Ancient texts, however, describe clairvoyance as God’s domain: retro-cognition and extrasensory perception. From the Vedas to the Bible to Islamic writings, humanity has been handed a playbook for aspiring to reflect the divine. Who could’ve guessed that thousands of years later the reconstruction of Jehovah’s sand in the form of Jensen’s GPU would be the means to make it all possible? <em>Yaas queen</em>, we’re talking AI wrappers, let’s gooo!</p> <h2 id="what-did-i-make">What did I make?</h2> <p>Clairvoyant is a real-time voice transcription and intelligent context-aware assistant. It captures audio, transcribes it as text, processes it through multiple cascades of AI agents, and then provides personalized responses using multiple AI tools to pass informative context back to the user’s wave-guide optics HUD. During this process, Clairvoyant simultaneously captures all transcribed audio and adds it to memory. Over time, the user can <a href="https://youtu.be/JrGYLNHfUwE?si=GDZbjTGA7rdpwqGG" rel="external nofollow noopener" target="_blank">achieve 20/20 hindsight</a></p> <p><img src="https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/948c117ffc7e3806075f079f43823df8.gif" alt="image"></p> <p>and recall from their memories things that matter to them. I’ve found it useful to remember things that I said, things that I’ve heard, and reflection on the questions I’ve asked about over a growing number of weeks and months. In short, I’m getting closer to my vision of having E.D.I.T.H, JARVIS, and Cortana.</p> <blockquote> <p>💬 <strong>Show me the code</strong></p> <p>🤖 You’re absolutely right, <a href="https://github.com/ajay-bhargava/clairvoyant" rel="external nofollow noopener" target="_blank">here’s the code</a>.</p> </blockquote> <h2 id="my-software-design-philosophy-in-ai-glasses">My software design philosophy in AI Glasses</h2> <p>Clairvoyant is my first real flex at making a highly opinionated codebase following my time at the <a href="https://fractalbootcamp.com" rel="external nofollow noopener" target="_blank">Fractal Accelerator of NYC</a>. <a href="https://www.amazon.com/Grokking-Simplicity-software-functional-thinking/dp/1617296201" rel="external nofollow noopener" target="_blank">Grokking Simplicity</a> and <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/" rel="external nofollow noopener" target="_blank">Pragmatic Programmer</a>teach core fundamentals of designing great code and are required reading in the accelerator. I’ve felt, however, that with traditional applications of programming (e.g. ML code or Full-stack Engineering) you’ve got to obey the primitives or abstractions that others <a href="https://www.reddit.com/r/nextjs/comments/1ag76t0/nextjs_14_vs_pages_meme/" rel="external nofollow noopener" target="_blank">have designed for you</a>. Because of this, you’re not really thinking about the “business logic” and rather thinking about “integration patterns” and that isn’t terribly satisfying.</p> <p>What’s fun in AR/AI glasses is that the whole field is still very greenfield. While there are growing codebases to support hardware, the design philosophy of how software programs should be written isn’t really there yet. I think that the extensibility of software in the AI glasses domain could be greatly enhanced <em>if</em> we all started forming (and writing) opinions and thoughts on how code should “work” in this paradigm and then debated them. So, without further ado, here are some design principles I learned through real-world testing the Clairvoyant app (and building AR glasses software) for the last 3 months.</p> <h3 id="write-apis-for-hardware-access-boost-iteration-speed">Write API’s for hardware access, boost iteration speed.</h3> <p>I’ve worked with the Brilliant Frames in the past. In fact, I was the <a href="https://x.com/0x1F9ED/status/1936792737774288967" rel="external nofollow noopener" target="_blank">fan favorite</a> in a Hackathon in NYC because of my ability to create apps that mattered quickly on that platform. That being said, creating upon the <a href="https://github.com/CitizenOneX/frame_vision_api" rel="external nofollow noopener" target="_blank">Flutter</a> repository template didn’t feel super intuitive. It “<em>worked</em>” because the majority of the application I created was a backend <a href="https://github.com/with-context-engine/context-personhood" rel="external nofollow noopener" target="_blank">API hosted in Convex</a> and this did all the heavy lifting. It received image data from the app which knew about the API endpoint and then the API endpoint logic handled most of the image interpretation. Now, smart readers will know that Convex is dripping <a href="https://stack.convex.dev/how-convex-works" rel="external nofollow noopener" target="_blank">WebSockets</a>so that you can get insanely low latency transactions between your service and the client. In my case, the API endpoint was designed to receive image data, but it could’ve easily been adapted to audio and haptic/IMU data too.</p> <h3 id="stay-away-from-swift-use-platforms-that-house-your-ai-glasses-app-instead">Stay away from Swift. Use platforms that house your AI glasses app instead.</h3> <p>The underlying hardware code had been graciously written by <a href="https://docs.brilliant.xyz/frame/frame-sdk-lua/" rel="external nofollow noopener" target="_blank">the Brilliant team</a>so it was only a matter of effort to get the full glasses integration. The hard part wasn’t actually developing the API endpoint. What slowed me down wasn’t the API or the hardware. It was wrestling with Flutter, packaging builds in Xcode, pushing to TestFlight, and debugging code that didn’t really matter to what I was building. Between July and August 2025 I thought for a hot minute, whoa, I think there should be a startup to write infrastructure “glue” that standardizes connections between hardware (client) and server. Turns out, however, <a href="https://docs.mentra.glass/quickstart" rel="external nofollow noopener" target="_blank">MentraOS</a> (formerly AugmentOS) has already existed for years and did just that! The primitive to deal with audio, for example, is high touch enough that you get a VAD model to transcribe the audio into text without having to worry about doing that yourself. They use <a href="https://soniox.com" rel="external nofollow noopener" target="_blank">Soniox</a> as their audio translation provider. This is all it takes, for example, to get the spoken text from the user or anyone around him as he/she is wearing AR glasses. With MentraOS, you’re not building apps for the Apple App Store, you’re building apps for the MentraOS app store. I’m still in awe with how Apple approved this.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Subscribe to transcription events</span>
+<span class="nx">appSession</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nf">onTranscription</span><span class="p">((</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Transcription: </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="s2">`Final: </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">isFinal</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+  <span class="k">if </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">isFinal</span><span class="p">)</span> <span class="p">{</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div></div> <h3 id="mind-your-latency">Mind your latency</h3> <p>In my early prototypes of Clairvoyant, I would wantonly call AI tools and have my daily audio transcription acted on as soon as I’d be done speaking. Depending on the latency of the AI tool, this would either be super annoying, or super frustrating. Allow me to how I think about latency and control-flow in the age of AI glasses.</p> <p><strong>“Be Fast” expectations</strong></p> <p>I have a theory. The closer software gets to our eyeballs, the less patience people have to it taking too long to “work”. Two people staring at an iPhone loading a webpage? Totally fine! A person waiting a second on his glasses for the weather, or, the subsequent return to an answer to a query about the “role of context engineering in LLM’s”? Preposterous, its taking too god-damn long!</p> <p><strong>“Be Slow” expectations</strong></p> <p>Is the text appearing too fast? You’ll hear your inner monologue say: “What’s going on here? Is this thing even working?”. As a developer, even you’ll have a pause for concern: Hang on I’m not sure this answer really searched the web, or utilized agentic memory correctly. Gleaning the pace at which users will “expect” answers is an acquired taste.</p> <p>Since I’ve been wearing Clairvoyant for about a month now I’ve had some thoughts as to how to address latency. How do we strike the right balance?</p> <h4 id="dont-listen-to-everything-you-hear">Don’t listen to everything you hear</h4> <p>Right off the bat we have to start with preventing erroneous audio chunks from making their way into the <code class="language-plaintext highlighter-rouge">handleTranscription()</code> flow. This allows you to reserve your AI inference server for queries that matter. This is accomplished by three methods:</p> <ol> <li> <p>Making sure that the VAD model (Soniox) is notifying the application that the speech is done. Soniox claims to use intonation, breath, and other audio characteristics to determine the completion of speech. Since I haven’t invested time and energy into developing better Mel Frequency Cepstral Coefficents tooling (see <a href="https://www.kaggle.com/code/ilyamich/mfcc-implementation-and-tutorial" rel="external nofollow noopener" target="_blank">here</a> for more information on that) I’m just going to rely on the out of the box service for now.</p> </li> <li> <p>Making sure that the duration of the transcribed speech isn’t a sentence fragment or a spurious audio fragment. You’ll be surprised how sometimes sensitive or not sensitive (e.g. finicky) microphones can be. With that there are spurious detections of speech, spurious transcriptions and those happen to be quite short. Eliminating them is a good idea.</p> </li> <li> <p>Sometimes you’ll ask one or two or maybe three successive questions one after another. Or maybe you’re in a crowded room of excited people who are rapid firing questions at you. A simple <code class="language-plaintext highlighter-rouge">rateLimiter</code> is useful for preventing too many queries and thus too many displays on the glasses all at once.</p> </li> </ol> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">protected</span> <span class="nx">override</span> <span class="k">async</span> <span class="nf">onSession</span><span class="p">(</span><span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="p">[</span><span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">initializeMemory</span><span class="p">();</span>
+
+		<span class="nx">session</span><span class="p">.</span><span class="nx">events</span><span class="p">.</span><span class="nf">onTranscription</span><span class="p">(</span><span class="k">async </span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+			<span class="c1">// [1] If its not a final utterance, skip</span>
+			<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">data</span><span class="p">.</span><span class="nx">isFinal</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+			<span class="c1">// [2] If the audio segment causing this transcription is too short, skip</span>
+			<span class="k">if </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">duration</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">if </span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">duration</span> <span class="o">&lt;</span> <span class="mi">200</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">return</span><span class="p">;</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+
+			<span class="c1">// [3] If the question rate limiter is triggered, skip</span>
+			<span class="k">if </span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">questionRateLimiter</span><span class="p">.</span><span class="nf">shouldSkip</span><span class="p">(</span><span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">,</span> <span class="dl">"</span><span class="s2">Clairvoyant</span><span class="dl">"</span><span class="p">))</span> <span class="p">{</span>
+				<span class="k">return</span><span class="p">;</span>
+			<span class="p">}</span>
+
+			<span class="c1">// Handle the transcription</span>
+			<span class="k">await</span> <span class="nf">handleTranscription</span><span class="p">(</span><span class="nx">data</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+		<span class="p">});</span>
+	<span class="p">}</span>
+</code></pre></div></div> <h4 id="use-lightning-fast-ai-models-for-your-ai-agents">Use lightning fast AI models for your AI agents</h4> <table> <tbody> <tr> <td>There are 6 agents that handle transcribed text. Iterating through different providers and prompts has been super delightful thanks to <a href="https://boundaryml.com" rel="external nofollow noopener" target="_blank">BAML</a>(more on this [[#Use lightning fast AI models for your AI agents</td> <td>here]]).</td> </tr> </tbody> </table> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>baml_src/
+├── route.baml          <span class="c"># Main routing logic and route definitions</span>
+├── weather.baml        <span class="c"># Weather response agent</span>
+├── search.baml         <span class="c"># Web search result agent  </span>
+├── maps.baml           <span class="c"># Location/maps response agent</span>
+├── recall.baml         <span class="c"># Memory recall agent</span>
+├── answer.baml         <span class="c"># General knowledge agent</span>
+├── clients.baml        
+└── generators.baml     
+</code></pre></div></div> <p>Crucially, however, its necessary to choose the fastest and lowest latency AI models to interpret text. Fortunately you can do this via BAML in the <code class="language-plaintext highlighter-rouge">clients.baml</code> settting. I ended up choosing <code class="language-plaintext highlighter-rouge">GPT-OSS-20B</code> and/or <code class="language-plaintext highlighter-rouge">GPT-OSS-120B</code> depending on the complexity or ambiguity of the query that was sent to that particular agent.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>client&lt;llm&gt; Groq {
+  provider openai-generic
+  options {
+    base_url "https://api.groq.com/openai/v1"
+    api_key env.GROQ_API_KEY
+    model "openai/gpt-oss-20b"
+  }
+}
+
+client&lt;llm&gt; GroqHeavy {
+  provider openai-generic
+  options {
+    base_url "https://api.groq.com/openai/v1"
+    api_key env.GROQ_API_KEY
+    model "openai/gpt-oss-120b"
+  }
+}
+</code></pre></div></div> <p>Outside of those AI models sped up on <a href="https://groq.com" rel="external nofollow noopener" target="_blank">Groq</a> using Groq’s <a href="https://groq.com/lpu-architecture" rel="external nofollow noopener" target="_blank">LPU</a>’s I never dabble in any of the current generation models because they’re so god awfully slow. The only model that actually feels fast that isn’t hosted by Groq is <code class="language-plaintext highlighter-rouge">openai/gpt-4o-mini</code> and I provide that agent with highly structured weather data to interpret weather requests.</p> <h4 id="use-fast-ai-tools">Use fast AI tools</h4> <p>Every tool that touches text must be fast. This is because you’re operating in so many compounding latency constraints. Audio transcription: latency. The AI agent that routes your query to the other AI agent: latency. The receipt of the text back to the glasses following the tool interpretation agent massaging returned tool data: latency.</p> <p>Latency is everywhere, and so selecting the right tooling frameworks that deliver what you need fast without fail is of the highest concern. With that in mind, here are the tool providers I used for each data source:</p> <table> <thead> <tr> <th>Tool</th> <th>Provider</th> <th>Latency (ms)</th> </tr> </thead> <tbody> <tr> <td>Web Search</td> <td><a href="https://www.tavily.com" rel="external nofollow noopener" target="_blank">Tavily</a></td> <td>~600ms</td> </tr> <tr> <td>Maps Search</td> <td>Google Maps (<a href="https://developers.google.com/maps/documentation/places/web-service/text-search" rel="external nofollow noopener" target="_blank">Text Search API</a>)</td> <td>~400ms</td> </tr> <tr> <td>Weather</td> <td><a href="https://openweathermap.org" rel="external nofollow noopener" target="_blank">OpenWeatherMap</a></td> <td>~300ms</td> </tr> <tr> <td>Memory</td> <td><a href="https://plasticlabs.ai/#main" rel="external nofollow noopener" target="_blank">Plastic Labs</a></td> <td>~1200ms</td> </tr> </tbody> </table> <h3 id="temper-user-frustration-of-latency-with-loading-hints">Temper user frustration of latency with loading hints</h3> <p>I know it sounds really simple, but a really easy design choice you can make on the Even Realities G1’s is to provide the user with text while another function is awaiting return. Here’s what that looks like:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="kd">type</span> <span class="nx">AppSession</span><span class="p">,</span> <span class="nx">ViewType</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">@mentra/sdk</span><span class="dl">"</span><span class="p">;</span>
+
+<span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">showTextDuringOperation</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">(</span>
+	<span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">,</span>
+	<span class="nx">loadingText</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+	<span class="nx">doneText</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+	<span class="nx">errorText</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+	<span class="nx">asyncOperation</span><span class="p">:</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span><span class="p">,</span>
+	<span class="nx">options</span><span class="p">:</span> <span class="p">{</span>
+		<span class="nl">view</span><span class="p">?:</span> <span class="nx">ViewType</span><span class="p">;</span>
+		<span class="nl">clearDurationMs</span><span class="p">?:</span> <span class="kr">number</span><span class="p">;</span>
+	<span class="p">}</span> <span class="o">=</span> <span class="p">{},</span>
+<span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="nx">T</span><span class="o">&gt;</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="p">{</span> <span class="nx">view</span> <span class="o">=</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span> <span class="nx">clearDurationMs</span> <span class="o">=</span> <span class="mi">5000</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">options</span><span class="p">;</span>
+
+	<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="nx">loadingText</span><span class="p">,</span> <span class="p">{</span>
+		<span class="nx">view</span><span class="p">,</span>
+		<span class="na">durationMs</span><span class="p">:</span> <span class="mi">30000</span><span class="p">,</span>
+	<span class="p">});</span>
+
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="nx">result</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">asyncOperation</span><span class="p">();</span>
+
+		<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="nx">doneText</span><span class="p">,</span> <span class="p">{</span>
+			<span class="nx">view</span><span class="p">,</span>
+			<span class="na">durationMs</span><span class="p">:</span> <span class="nx">clearDurationMs</span><span class="p">,</span>
+		<span class="p">});</span>
+
+		<span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+	<span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="nx">errorText</span><span class="p">,</span> <span class="p">{</span>
+			<span class="nx">view</span><span class="p">,</span>
+			<span class="na">durationMs</span><span class="p">:</span> <span class="nx">clearDurationMs</span><span class="p">,</span>
+		<span class="p">});</span>
+		<span class="k">throw</span> <span class="nx">error</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div> <p>and here’s what it looks like in operation:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">showTextDuringOperation</span><span class="p">(</span>
+	<span class="nx">session</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Trying to remember...</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Got it!</span><span class="dl">"</span><span class="p">,</span>
+	<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Couldn't remember!</span><span class="dl">"</span><span class="p">,</span>
+	<span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">diatribePeer</span><span class="p">.</span><span class="nf">chat</span><span class="p">(</span><span class="nx">textQuery</span><span class="p">),</span>
+<span class="p">);</span>
+</code></pre></div></div> <p>The reason why this is so helpful is that some applications are indeed slow and that’s because they’re grooming over a ton of contextual data to sound relevant. By displaying something to the user during the load of another screen, you quell the user’s frustrations. The real trick is, I think, matching the user’s expectations with the reality for what the AI tool or AI agent is intending to do. Calling on your personal memory layer? “Trying to Remember.”. Looking up something on the internet? “Searching the web.”. Fun cues to make the user feel engaged with a real assistant are always helpful.</p> <h2 id="advice-for-vibe-coding-a-personal-assistant">Advice for vibe coding a personal assistant</h2> <p>In designing Clairvoyant, I first did a lot of nonsense. I had page long vibe codes, tools mixed in with agents, and just more slop than you could think of. This was actually really useful because it let me sink into the trough of enlightenment as to how I’d want to make repeatable code modules that could be defined and refined. Here are some of the fundamentals I laid down having spent far too many tokens messing around.</p> <h4 id="create-a-router-that-an-llm-can-expand-upon">Create a router that an LLM can expand upon</h4> <p>One of the early design challenges I faced was how to create an extensible foundation upon which I could build additional tools without having to constantly rework the software architecture. The <code class="language-plaintext highlighter-rouge">switch</code> statement and good types to the rescue!</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">handleTranscription</span><span class="p">(</span>
+	<span class="nx">data</span><span class="p">:</span> <span class="nx">TranscriptionData</span><span class="p">,</span>
+	<span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">,</span>
+	<span class="nx">memorySession</span><span class="p">:</span> <span class="nx">Session</span><span class="p">,</span>
+	<span class="nx">peers</span><span class="p">:</span> <span class="nx">Peer</span><span class="p">[],</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[Clairvoyant] Transcription: </span><span class="p">${</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+	<span class="kd">const</span> <span class="nx">routing</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">b</span><span class="p">.</span><span class="nc">Route</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">);</span>
+	<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">routing</span><span class="p">.</span><span class="nx">routing</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">warn</span><span class="p">(</span><span class="s2">`[Clairvoyant] No routing decision made. Resetting...`</span><span class="p">);</span>
+		<span class="k">return</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">switch </span><span class="p">(</span><span class="nx">routing</span><span class="p">.</span><span class="nx">routing</span><span class="p">)</span> <span class="p">{</span>
+		<span class="k">case</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">WEATHER</span><span class="p">:</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[Clairvoyant] Weather route: starting async flow`</span><span class="p">);</span>
+			<span class="k">void</span> <span class="nf">startWeatherFlow</span><span class="p">(</span><span class="nx">session</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">case</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">MAPS</span><span class="p">:</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[Clairvoyant] Maps route: starting async flow`</span><span class="p">);</span>
+			<span class="k">void</span> <span class="nf">startMapsFlow</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">case</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">WEB_SEARCH</span><span class="p">:</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+				<span class="s2">`[Clairvoyant] Web search route: starting async flow`</span><span class="p">,</span>
+			<span class="p">);</span>
+			<span class="k">void</span> <span class="nf">startWebSearchFlow</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">case</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">KNOWLEDGE</span><span class="p">:</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[Clairvoyant] Routing: Starting knowledge flow`</span><span class="p">);</span>
+			<span class="k">void</span> <span class="nf">startKnowledgeFlow</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="k">case</span> <span class="nx">Router</span><span class="p">.</span><span class="nx">MEMORY_RECALL</span><span class="p">:</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+				<span class="s2">`[Clairvoyant] Memory Recall route: starting async flow`</span><span class="p">,</span>
+			<span class="p">);</span>
+			<span class="k">void</span> <span class="nc">MemoryRecall</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+
+		<span class="nl">default</span><span class="p">:</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+				<span class="s2">`[Clairvoyant] Memory Insertion route: starting async flow`</span><span class="p">,</span>
+			<span class="p">);</span>
+			<span class="k">void</span> <span class="nc">MemoryCapture</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">text</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>These are defined by an <code class="language-plaintext highlighter-rouge">Enum</code> in BAML that allows an LLM (in this case <code class="language-plaintext highlighter-rouge">gpt-oss-120b</code>) to intelligently decide how to route the user query to the right tool call to get the user’s query resolved.</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>enum Router {
+    WEATHER @description("Current or upcoming weather questions for a specific place.")
+    WEB_SEARCH @description("News, current events, facts that change over time such as political events, or topics not obviously location-based.")
+    MAPS @description("Finding nearby businesses, restaurants, addresses, or directions.")
+    KNOWLEDGE @description("General knowledge that does not fit into other categories.")
+    MEMORY_RECALL @description("Questions about the user's memory and personal history, personal preferences, personal opinions, goals, information about the user, or anything that is not a fact.")
+}
+
+class RoutingBehavior {
+    origin string @description("Echo of the user's input text verbatim.")
+    routing Router
+}
+
+function Route(text: string) -&gt; RoutingBehavior {
+    client "GroqHeavy"
+    prompt #"
+        You are a routing assistant. Pick the best router for the user's request.
+         
+        
+    "#
+}
+</code></pre></div></div> <p>Now, one thing I will say is relying on an LLM to route natural language queries can be fraught with a ton of error, but, fortunately, with BAML you can just <em>test</em> your AI agents!</p> <h5 id="use-baml-for-defining-your-ai-agents-thats-it">Use BAML for defining your AI agents. That’s it.</h5> <p>I cannot stress this enough. The ability to have clean types that match the structured output from an LLM means that you can develop tests. I use <code class="language-plaintext highlighter-rouge">baml</code> included test suite to test a battery of queries every time I change my system or assistant prompt. Even if there were to be a model change, I flag on deployment.</p> <pre><code class="language-baml">test test_weather {
+    functions [Route]
+    args {
+        text "What is the weather in San Francisco?"
+    }
+    @@assert( )
+}
+
+test test_web_search {
+    functions [Route]
+    args {
+        text "Who is the current president of the United States?"
+    }
+    @@assert( )
+}
+
+test test_maps {
+    functions [Route]
+    args {
+        text "Find me a ramen restaurant near Union Square."
+    }
+    @@assert( )
+}
+
+test test_knowledge {
+    functions [Route]
+    args {
+        text "What is the capital of France?"
+    }
+    @@assert( )
+}
+
+test test_knowledge_2 {
+    functions [Route]
+    args {
+        text "What is the purpose of mitochondria?"
+    }
+    @@assert( )
+}
+
+test test_memory {
+    functions [Route]
+    args {
+        text "What is my name?"
+    }
+    @@assert( )
+}
+
+test test_memory_2 {
+    functions [Route]
+    args {
+        text "Koyal, what did I eat yesterday?"
+    }
+    @@assert( )
+}
+</code></pre> <h4 id="create-a-separation-of-concerns-for-your-tools-with-handlers">Create a separation of concerns for your tools with handlers</h4> <p><img src="https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/382aca351e6ee17234d581ebc05493b4.png" alt="image" style="max-width: 100%; height: auto; display: block; margin: 0 auto;"></p> <p>In all the subsequent applications I’ve developed, I’ve maintained the pattern where handlers call tools. Like tools, AI agents are handled by the handler. That way they are constrained by the control flow. See the example below:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">startWebSearchFlow</span><span class="p">(</span>
+	<span class="nx">query</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+	<span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">,</span>
+	<span class="nx">memorySession</span><span class="p">:</span> <span class="nx">Session</span><span class="p">,</span>
+	<span class="nx">peers</span><span class="p">:</span> <span class="nx">Peer</span><span class="p">[],</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">runId</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">();</span>
+	<span class="nx">webSearchRunIds</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">session</span><span class="p">,</span> <span class="nx">runId</span><span class="p">);</span>
+
+	<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+		<span class="s2">`[startWebSearchFlow] Starting web search flow for query: </span><span class="p">${</span><span class="nx">query</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+	<span class="p">);</span>
+	
+	<span class="c1">// [1] Try the WebSearchTool</span>
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="nx">searchResults</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">showTextDuringOperation</span><span class="p">(</span>
+			<span class="nx">session</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">S: Searching the web...</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">S: Found it!</span><span class="dl">"</span><span class="p">,</span>
+			<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">S: Couldn't search the web.</span><span class="dl">"</span><span class="p">,</span>
+			<span class="p">()</span> <span class="o">=&gt;</span> <span class="nf">performWebSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">),</span>
+		<span class="p">);</span>
+		
+		<span class="c1">// [2] Capture in Memory Tool</span>
+		<span class="k">await</span> <span class="nc">MemoryCapture</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">session</span><span class="p">,</span> <span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">);</span>
+
+		<span class="k">if </span><span class="p">(</span><span class="o">!</span><span class="nx">searchResults</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nc">Error</span><span class="p">(</span><span class="dl">"</span><span class="s2">No response from web search</span><span class="dl">"</span><span class="p">);</span>
+		<span class="p">}</span>
+
+		<span class="k">if </span><span class="p">(</span><span class="nx">webSearchRunIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+				<span class="s2">`[startWebSearchFlow] Web search response arrived for stale request, discarding`</span><span class="p">,</span>
+			<span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+		
+		
+		<span class="c1">// [3] AI agent handling WebSearchResults</span>
+		<span class="kd">const</span> <span class="nx">answerLines</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">b</span><span class="p">.</span><span class="nc">AnswerSearch</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="nx">searchResults</span><span class="p">);</span>
+
+		<span class="k">if </span><span class="p">(</span><span class="nx">webSearchRunIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+				<span class="s2">`[startWebSearchFlow] Web search response arrived for stale request, discarding`</span><span class="p">,</span>
+			<span class="p">);</span>
+			<span class="k">return</span><span class="p">;</span>
+		<span class="p">}</span>
+
+		<span class="kd">const</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">answerLines</span><span class="p">.</span><span class="nx">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]?.</span><span class="nx">lines</span><span class="p">;</span>
+		
+		<span class="c1">// [4] Display Text on AI glasses</span>
+		<span class="k">if </span><span class="p">(</span><span class="nx">lines</span><span class="p">?.</span><span class="nx">length</span><span class="p">)</span> <span class="p">{</span>
+			<span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+				<span class="kd">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">lines</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+				<span class="k">if </span><span class="p">(</span><span class="nx">webSearchRunIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+				<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[startWebSearchFlow] Web search result: </span><span class="p">${</span><span class="nx">line</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+				<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="s2">`// Clairvoyant\nS: </span><span class="p">${</span><span class="nx">line</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
+					<span class="na">view</span><span class="p">:</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span>
+					<span class="na">durationMs</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+				<span class="p">});</span>
+				<span class="k">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+					<span class="k">await</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="mi">3000</span><span class="p">));</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="s2">`[startWebSearchFlow] No lines in answerLines`</span><span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span>
+			<span class="s2">`[startWebSearchFlow] Web search flow error: </span><span class="p">${</span><span class="nc">String</span><span class="p">(</span><span class="nx">error</span><span class="p">)}</span><span class="s2">`</span><span class="p">,</span>
+		<span class="p">);</span>
+
+		<span class="k">if </span><span class="p">(</span><span class="nx">webSearchRunIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">===</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span>
+				<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">S: Couldn't search the web.</span><span class="dl">"</span><span class="p">,</span>
+				<span class="p">{</span>
+					<span class="na">view</span><span class="p">:</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span>
+					<span class="na">durationMs</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+				<span class="p">},</span>
+			<span class="p">);</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <h3 id="then-write-agentsmd-andor-cursorrules">Then write <code class="language-plaintext highlighter-rouge">AGENTS.md</code> and/or <code class="language-plaintext highlighter-rouge">./cursor/rules</code> </h3> <p>Ok, now the part you’re probably interested in. Surprise, the lesson here is a little boring, tbh. If you want a great time vibe-coding, you’re going to need to have a ton of structure to your code. If you’ve made it this far in the blog you’re probably already aware of this. If you’re skipping around, sorry, you’re going to have to go back and read the first few sections! Its true. When the code was well structured (or at least, structured enough such that there was a clear separation of concerns between the code modules) it was far easier to just tell a code generation model that I needed to integrate yet another tool with an existing handler pattern. Once I wrote the knowledge tool, the search tool and the maps tool were pretty simple. The handlers are all about the same. Memory (to be discussed later) was even easier because it just had to be inserted between query and response generation.</p> <h3 id="accelerate-using-cli-or-background-agents">Accelerate using CLI or background agents</h3> <p>I will say that tools like <a href="http://www.ampcode.com" rel="external nofollow noopener" target="_blank">Amp</a>are amazing to achieve terminal velocity in adding new features once you’ve got the design pattern down. Not entirely sure why that is, but, I think it has to do with the efficient use of the context window and the ability to run command line tools and git with far better ease than in IDE. What I particularly like about Amp is that I can paste the contents of the conversation by sharing it.</p> <h2 id="what-excites-me-moving-forward">What excites me moving forward?</h2> <h3 id="personal-memory-and-memory-reasoning">Personal memory and memory reasoning</h3> <p>My most recent edit to Clairvoyant has been to add <a href="https://honcho.dev" rel="external nofollow noopener" target="_blank">Honcho</a>. Honcho is a dead simple method of way of embedding memory and reasoning into any application. It was one tool call, one handler, and one insertion into every existing handler to capture both the user’s vocal “diatribe” and a “synthesis” peer. I think of peers as the Agent’s shadow. They’re there to passively listen in on a conversation between you and the AI agent or the AI agents and other agents. Creating new peers is as simple as this:</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">initializeMemory</span><span class="p">():</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="p">[</span><span class="nx">Session</span><span class="p">,</span> <span class="nx">Peer</span><span class="p">[]]</span><span class="o">&gt;</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">honchoClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Honcho</span><span class="p">({</span>
+		<span class="na">apiKey</span><span class="p">:</span> <span class="nx">env</span><span class="p">.</span><span class="nx">HONCHO_API_KEY</span><span class="p">,</span>
+		<span class="na">environment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">production</span><span class="dl">"</span><span class="p">,</span>
+		<span class="na">workspaceId</span><span class="p">:</span> <span class="dl">"</span><span class="s2">with-context</span><span class="dl">"</span><span class="p">,</span>
+	<span class="p">});</span>
+	<span class="c1">// [1] Create a session</span>
+	<span class="kd">const</span> <span class="nx">session</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">honchoClient</span><span class="p">.</span><span class="nf">session</span><span class="p">(</span><span class="nf">randomUUID</span><span class="p">());</span>
+	<span class="c1">// [2] Create the peer(s)</span>
+	<span class="kd">const</span> <span class="nx">diatribePeer</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">honchoClient</span><span class="p">.</span><span class="nf">peer</span><span class="p">(</span><span class="dl">"</span><span class="s2">diatribe</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+		<span class="na">metadata</span><span class="p">:</span> <span class="p">{</span>
+			<span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Diatribe</span><span class="dl">"</span><span class="p">,</span>
+			<span class="na">description</span><span class="p">:</span>
+				<span class="dl">"</span><span class="s2">A peer that listens to the raw translations of the users' speech.</span><span class="dl">"</span><span class="p">,</span>
+		<span class="p">},</span>
+	<span class="p">});</span>
+	<span class="kd">const</span> <span class="nx">synthesisedPeer</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">honchoClient</span><span class="p">.</span><span class="nf">peer</span><span class="p">(</span><span class="dl">"</span><span class="s2">synthesis</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+		<span class="na">metadata</span><span class="p">:</span> <span class="p">{</span>
+			<span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Synthesis Peer</span><span class="dl">"</span><span class="p">,</span>
+			<span class="na">description</span><span class="p">:</span>
+				<span class="dl">"</span><span class="s2">A peer that captures synthesiszed  knowledge from the user's speech.</span><span class="dl">"</span><span class="p">,</span>
+		<span class="p">},</span>
+	<span class="p">});</span>
+	<span class="c1">// Add the peers to the session</span>
+	<span class="k">await</span> <span class="nx">session</span><span class="p">.</span><span class="nf">addPeers</span><span class="p">([</span><span class="nx">diatribePeer</span><span class="p">,</span> <span class="nx">synthesisedPeer</span><span class="p">]);</span>
+	<span class="k">return</span> <span class="p">[</span><span class="nx">session</span><span class="p">,</span> <span class="p">[</span><span class="nx">diatribePeer</span><span class="p">,</span> <span class="nx">synthesisedPeer</span><span class="p">]];</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>Instantiating the session happens (in my case) at every time the user turns on the Clairvoyant application in MentraOS. The memory session is then passed to every handler and every tool that needs it. God I love typescript so much!</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code>	<span class="k">protected</span> <span class="nx">override</span> <span class="k">async</span> <span class="nf">onSession</span><span class="p">(</span><span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">):</span> <span class="nb">Promise</span><span class="o">&lt;</span><span class="k">void</span><span class="o">&gt;</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="p">[</span><span class="nx">memorySession</span><span class="p">,</span> <span class="nx">peers</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">initializeMemory</span><span class="p">();</span>
+		<span class="c1">// Other code</span>
+		<span class="p">...</span>
+	<span class="p">}</span>
+</code></pre></div></div> <p>Now, when the individual asks a question (say, “What’s my name”) the LLM router will intelligently route this back to the <code class="language-plaintext highlighter-rouge">MEMORY_RECALL</code> handler and then call a memory recall command, which, under the hood is just a wrapper for the API endpoint that Honcho has created.</p> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="k">async</span> <span class="kd">function</span> <span class="nf">MemoryRecall</span><span class="p">(</span>
+	<span class="nx">textQuery</span><span class="p">:</span> <span class="kr">string</span><span class="p">,</span>
+	<span class="nx">session</span><span class="p">:</span> <span class="nx">AppSession</span><span class="p">,</span>
+	<span class="nx">memorySession</span><span class="p">:</span> <span class="nx">Session</span><span class="p">,</span>
+	<span class="nx">peers</span><span class="p">:</span> <span class="nx">Peer</span><span class="p">[],</span>
+<span class="p">)</span> <span class="p">{</span>
+	<span class="kd">const</span> <span class="nx">runId</span> <span class="o">=</span> <span class="nb">Date</span><span class="p">.</span><span class="nf">now</span><span class="p">();</span>
+	<span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">set</span><span class="p">(</span><span class="nx">session</span><span class="p">,</span> <span class="nx">runId</span><span class="p">);</span>
+
+	<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="s2">`[startMemoryRecallFlow] Starting memory recall flow`</span><span class="p">);</span>
+
+	<span class="k">try</span> <span class="p">{</span>
+		<span class="kd">const</span> <span class="nx">diatribePeer</span> <span class="o">=</span> <span class="nx">peers</span><span class="p">.</span><span class="nf">find</span><span class="p">((</span><span class="nx">peer</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">peer</span><span class="p">.</span><span class="nx">id</span> <span class="o">===</span> <span class="dl">"</span><span class="s2">diatribe</span><span class="dl">"</span><span class="p">);</span>
+		<span class="k">if </span><span class="p">(</span><span class="nx">diatribePeer</span><span class="p">)</span> <span class="p">{</span>
+			<span class="c1">// [1] Capture the query as a memory first</span>
+			<span class="k">await</span> <span class="nx">memorySession</span><span class="p">.</span><span class="nf">addMessages</span><span class="p">([</span>
+				<span class="p">{</span>
+					<span class="na">peer_id</span><span class="p">:</span> <span class="nx">diatribePeer</span><span class="p">.</span><span class="nx">id</span><span class="p">,</span>
+					<span class="na">content</span><span class="p">:</span> <span class="nx">textQuery</span><span class="p">,</span>
+					<span class="na">metadata</span><span class="p">:</span> <span class="p">{</span>
+						<span class="na">timestamp</span><span class="p">:</span> <span class="k">new</span> <span class="nc">Date</span><span class="p">().</span><span class="nf">toISOString</span><span class="p">(),</span>
+						<span class="na">source</span><span class="p">:</span> <span class="dl">"</span><span class="s2">memoryRecall</span><span class="dl">"</span><span class="p">,</span>
+					<span class="p">},</span>
+				<span class="p">},</span>
+			<span class="p">]);</span>
+
+			<span class="c1">// [2] Query Honcho's representation of your memory from a peer. </span>
+			<span class="kd">const</span> <span class="nx">response</span> <span class="o">=</span> <span class="k">await</span> <span class="nf">showTextDuringOperation</span><span class="p">(</span>
+				<span class="nx">session</span><span class="p">,</span>
+				<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Trying to remember...</span><span class="dl">"</span><span class="p">,</span>
+				<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Got it!</span><span class="dl">"</span><span class="p">,</span>
+				<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Couldn't remember!</span><span class="dl">"</span><span class="p">,</span>
+				<span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">diatribePeer</span><span class="p">.</span><span class="nf">chat</span><span class="p">(</span><span class="nx">textQuery</span><span class="p">),</span>
+			<span class="p">);</span>
+			<span class="k">if </span><span class="p">(</span><span class="nx">response</span><span class="p">)</span> <span class="p">{</span>
+				<span class="k">if </span><span class="p">(</span><span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+						<span class="s2">`[startMemoryRecallFlow] Response arrived for stale request, discarding`</span><span class="p">,</span>
+					<span class="p">);</span>
+					<span class="k">return</span><span class="p">;</span>
+				<span class="p">}</span>
+				
+				<span class="c1">// [3] Format that memory response for the glasses. </span>
+				<span class="kd">const</span> <span class="nx">memoryRecall</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">b</span><span class="p">.</span><span class="nc">MemoryQueryRecall</span><span class="p">(</span><span class="nx">textQuery</span><span class="p">,</span> <span class="nx">response</span><span class="p">);</span>
+
+				<span class="k">if </span><span class="p">(</span><span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+					<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+						<span class="s2">`[startMemoryRecallFlow] Response arrived for stale request, discarding`</span><span class="p">,</span>
+					<span class="p">);</span>
+					<span class="k">return</span><span class="p">;</span>
+				<span class="p">}</span>
+
+				<span class="c1">// [4] Process the memory recall results for the glasses</span>
+				<span class="k">if </span><span class="p">(</span>
+					<span class="nx">memoryRecall</span><span class="p">.</span><span class="nx">results</span><span class="p">?.</span><span class="nx">lines</span> <span class="o">&amp;&amp;</span>
+					<span class="nx">memoryRecall</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">lines</span><span class="p">.</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span>
+				<span class="p">)</span> <span class="p">{</span>
+					<span class="kd">const</span> <span class="nx">lines</span> <span class="o">=</span> <span class="nx">memoryRecall</span><span class="p">.</span><span class="nx">results</span><span class="p">.</span><span class="nx">lines</span><span class="p">;</span>
+
+					<span class="c1">// Display each line sequentially</span>
+					<span class="k">for </span><span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+						<span class="kd">const</span> <span class="nx">line</span> <span class="o">=</span> <span class="nx">lines</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+
+
+						<span class="k">if </span><span class="p">(</span><span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">!==</span> <span class="nx">runId</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+
+						<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span>
+							<span class="s2">`[startMemoryRecallFlow] Memory recall line: </span><span class="p">${</span><span class="nx">line</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+						<span class="p">);</span>
+						<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="s2">`// Clairvoyant\nR: </span><span class="p">${</span><span class="nx">line</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span> <span class="p">{</span>
+							<span class="na">view</span><span class="p">:</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span>
+							<span class="na">durationMs</span><span class="p">:</span> <span class="mi">3000</span><span class="p">,</span>
+						<span class="p">});</span>
+
+						<span class="c1">// Add delay between lines (except for the last line)</span>
+						<span class="k">if </span><span class="p">(</span><span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">lines</span><span class="p">.</span><span class="nx">length</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+							<span class="k">await</span> <span class="k">new</span> <span class="nc">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nf">setTimeout</span><span class="p">(</span><span class="nx">resolve</span><span class="p">,</span> <span class="mi">3000</span><span class="p">));</span>
+						<span class="p">}</span>
+					<span class="p">}</span>
+				<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+					<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span>
+						<span class="s2">`[startMemoryRecallFlow] No lines in memory recall results`</span><span class="p">,</span>
+					<span class="p">);</span>
+					<span class="k">if </span><span class="p">(</span><span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">===</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+						<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span>
+							<span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: No memories found.</span><span class="dl">"</span><span class="p">,</span>
+							<span class="p">{</span>
+								<span class="na">view</span><span class="p">:</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span>
+								<span class="na">durationMs</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+							<span class="p">},</span>
+						<span class="p">);</span>
+					<span class="p">}</span>
+				<span class="p">}</span>
+			<span class="p">}</span>
+		<span class="p">}</span>
+	<span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nx">session</span><span class="p">.</span><span class="nx">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span>
+			<span class="s2">`[startMemoryRecallFlow] Error recalling memory: </span><span class="p">${</span><span class="nx">error</span><span class="p">}</span><span class="s2">`</span><span class="p">,</span>
+		<span class="p">);</span>
+		<span class="k">if </span><span class="p">(</span><span class="nx">memoryRunCallIds</span><span class="p">.</span><span class="nf">get</span><span class="p">(</span><span class="nx">session</span><span class="p">)</span> <span class="o">===</span> <span class="nx">runId</span><span class="p">)</span> <span class="p">{</span>
+			<span class="nx">session</span><span class="p">.</span><span class="nx">layouts</span><span class="p">.</span><span class="nf">showTextWall</span><span class="p">(</span><span class="dl">"</span><span class="s2">// Clairvoyant</span><span class="se">\n</span><span class="s2">R: Couldn't remember!</span><span class="dl">"</span><span class="p">,</span> <span class="p">{</span>
+				<span class="na">view</span><span class="p">:</span> <span class="nx">ViewType</span><span class="p">.</span><span class="nx">MAIN</span><span class="p">,</span>
+				<span class="na">durationMs</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+			<span class="p">});</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div> <p>What’s really impressive is that in the default route where no tool is called, almost all the conversation that I’m having is being logged into memory. I now understand why tools like <a href="friend.com">friend</a>, <a href="https://tayanecklace.com" rel="external nofollow noopener" target="_blank">taya</a>and i’m sure a litany of others all have some form of appeal. Its simple, being able to recall with perfect clarity what you said (or what others have said) is of high value to people. I know I’d like to win every argument with my wife!</p> <h3 id="devices-with-beam-forming-microphones">Devices with beam forming microphones</h3> <p>I’m not an audio specialist but I do have enough of a physics understanding to appreciate the need to perform the necessary signal processing to amplify the “target”’s voice and separate it from the noise. In this sense, the G1’s are not a sufficiently good device. I’m hopeful, however, that as the hardware progresses there will be the ability to add multiple microphones and then perform the signal processing on device to clear up the speaker’s intended sound. Sometimes when I want to be really crisp in what I’m recording, I’ll just wear my Airpods and my glasses and the voice capture and transcription becomes instantly better.</p> <h3 id="improving-latency-in-ai-models">Improving latency in AI models</h3> <p>I think we’re finally out of the trough of llusion for transformer architecture based models. Owing to vLLM’s coming through, we’re no longer sitting around for minutes waiting for the LLM to give us back an answer. Soon, this will be fast, in under 1s, and feel snappy. I am hopeful that there will be more attention to this domain in 2026.</p> <h3 id="diarization">Diarization</h3> <p>Even if we could just have self versus other in a latency sensitive way, that would be pretty cool. I’m thinking through how to support diarization. Something like an onboarding to capture the vocal data and have that as a check before sending data to a VAD model would be kind of neat. Of course, the ecosystem in Mentra and Soniox would have to be better resolved to support this.</p> <h3 id="shared-human-memory">Shared human memory</h3> <p>This work has got me thinking about memory at a deeper level. What if AI glasses become democratized? If everyone had memory embedded into their glasses, then could we all just have access to each other’s memory? Could we create a “hivemind” type experience where AI becomes the propagator of shared intuition, reasoning, and understanding? More on this when the time is right!</p> <p><img src="https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/061f8410b0ae1ad37c390f5cec46881e.png" alt="image"></p> <h2 id="conclusion">Conclusion</h2> <p>Clairvoyant started with a curiosity about an old word and turned into a real system for clear-seeing. It takes audio, turns it into text, routes that text through agents, and pushes context back into the HUD. The hard part hasn’t been the models or the hardware. It has been about speed, structure, and design choices that make the experience feel natural. Latency, memory, and routing are not abstract problems here, they are the core of making the assistant actually useful. If ancient clairvoyance was about touching something beyond human reach, the modern version is about capturing what we said, what we heard, and what we want to remember. The real work is in writing opinionated code, testing agents, separating tools from handlers, and making patterns that other developers can build on. It is time to lock in and build the software foundations now so that when the glasses get better and the models get faster, the system already feels like second nature.</p> </div> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2025 Ajay Bhargava Ph.D.. Last updated: October 02, 2025. </div> </footer> <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <script src="/assets/js/bootstrap.bundle.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?a0db7e5d5c70cc3252b3138b0c91dcaf" type="text/javascript"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/js/zoom.js?85ddb88934d28b74e78031fd54cf8308"></script> <script defer src="https://cdn.jsdelivr.net/npm/bootstrap-table@1.22.4/dist/bootstrap-table.min.js" integrity="sha256-4rppopQE9POKfukn2kEvhJ9Um25Cf6+IDVkARD0xh78=" crossorigin="anonymous"></script> <script src="/assets/js/no_defer.js?2781658a0a2b13ed609542042a859126"></script> <script defer src="/assets/js/common.js?e0514a05c5c95ac1a93a8dfd5249b92e"></script> <script defer src="/assets/js/copy_code.js?12775fdf7f95e901d7119054556e495f" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?d9f17b6adc2311cbabd747f4538bb15f"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/js/mathjax-setup.js?a5bb4e6a542c546dd929b24b8b236dfd"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script defer src="/assets/js/progress-bar.js?2f30e0e6801ea8f5036fa66e1ab0a71a" type="text/javascript"></script> <script src="/assets/js/vanilla-back-to-top.min.js?f40d453793ff4f64e238e420181a1d17"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/js/search/ninja-keys.min.js?a3446f084dcaecc5f75aa1757d087dcf"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/js/search-setup.js?6c304f7b1992d4b60f7a07956e52f04a"></script> <script src="/assets/js/search-data.js"></script> <script src="/assets/js/shortcut-key.js?6f508d74becd347268a7f822bca7309d"></script> </body> </html>
