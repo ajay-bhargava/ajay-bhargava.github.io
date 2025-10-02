@@ -18,9 +18,23 @@
   },
   "work": [
     {
+      "name": "With Context LLC",
+      "position": "Founder",
+      "url": "https://consulting.with-context.co",
+      "startDate": "2025-07",
+      "endDate": "",
+      "summary": "Founded contract engineering firm specializing in AI-powered solutions for multiple industries.",
+      "highlights": [
+        "Developed Voice AI agents that help scale out human workforces to tackle prior authorization claims for medical insurance",
+        "Built computer vision applications to peform quantitative takeoff of construction and renovation projects.",
+        "Built AR glasses applications for decision support for athletes playing football.",
+        "Built a multi-modal vLLM co-pilot for physical labor that acts in student/teacher mode to learn from and then train construction workers."
+      ]
+    },
+    {
       "name": "Bynd.Bio",
       "position": "Co-Founder & CTO",
-      "url": "",
+      "url": "http://www.bynd.bio",
       "startDate": "2024-10",
       "endDate": "2025-06",
       "summary": "Started a company to totally change how remote lab experiments are executed using REST APIs.",
