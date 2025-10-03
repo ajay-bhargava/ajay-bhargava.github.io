@@ -23,7 +23,9 @@ I'm fascinated by the idea of clairvoyance. The word itself literally means "cle
 
 Clairvoyant is a real-time voice transcription and intelligent context-aware assistant. It captures audio, transcribes it as text, processes it through multiple cascades of AI agents, and then provides personalized responses using multiple AI tools to pass informative context back to the user's wave-guide optics HUD. During this process, Clairvoyant simultaneously captures all transcribed audio and adds it to memory. Over time, the user can [achieve 20/20 hindsight](https://youtu.be/JrGYLNHfUwE?si=GDZbjTGA7rdpwqGG) 
 
-![image](https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/948c117ffc7e3806075f079f43823df8.gif)
+<p align="center">
+  <img src="https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/948c117ffc7e3806075f079f43823df8.gif" alt="image" />
+</p>
 
 and recall from their memories things that matter to them. I've found it useful to remember things that I said, things that I've heard, and reflection on the questions I've asked about over a growing number of weeks and months. In short, I'm getting closer to my vision of having E.D.I.T.H, JARVIS, and Cortana. 
 
@@ -108,7 +110,7 @@ protected override async onSession(session: AppSession): Promise<void> {
 
 #### Use lightning fast AI models for your AI agents
 
-There are 6 agents that handle transcribed text. Iterating through different providers and prompts has been super delightful thanks to [BAML](https://boundaryml.com)(more on this [[#Use lightning fast AI models for your AI agents|here]]). 
+There are 6 agents that handle transcribed text. Iterating through different providers and prompts has been super delightful thanks to [BAML](https://boundaryml.com)(more on this later).
 
 ```bash
 baml_src/
@@ -158,6 +160,7 @@ Latency is everywhere, and so selecting the right tooling frameworks that delive
 | Maps Search | Google Maps ([Text Search API](https://developers.google.com/maps/documentation/places/web-service/text-search)) | ~400ms       |
 | Weather     | [OpenWeatherMap](https://openweathermap.org)                                                                     | ~300ms       |
 | Memory      | [Plastic Labs](https://plasticlabs.ai/#main)                                                                     | ~1200ms      |
+
 
 ### Temper user frustration of latency with loading hints
 
@@ -646,7 +649,9 @@ Even if we could just have self versus other in a latency sensitive way, that wo
 
 This work has got me thinking about memory at a deeper level. What if AI glasses become democratized? If everyone had memory embedded into their glasses, then could we all just have access to each other's memory? Could we create a "hivemind" type experience where AI becomes the propagator of shared intuition, reasoning, and understanding? More on this when the time is right! 
 
-![image](https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/061f8410b0ae1ad37c390f5cec46881e.png)
+<p align="center">
+  <img src="https://with-context-public.s3.us-east-1.amazonaws.com/internal-memory-documents/2025/10/061f8410b0ae1ad37c390f5cec46881e.png" alt="image" />
+</p>
 
 ## Conclusion
 
