@@ -1,0 +1,28 @@
+# Shared configuration for both link-checking workflows.
+# See https://lychee.cli.rs/usage/config/
+
+# Pretend to be curl: many sites block unknown user agents.
+user_agent = "curl/7.54"
+
+# Network resilience: GitHub runners frequently hit slow or flaky hosts.
+max_retries = 3
+retry_wait_time = 5
+timeout = 30
+
+# Treat anti-bot responses as success. These hosts serve real content to
+# browsers but reject automated requests (403 Forbidden, 402 from paywalled
+# CDNs, 429 rate limiting).
+accept = ["200..=206", "402", "403", "429"]
+
+# Files that contain Liquid tags, demo content, or intentionally dead links.
+exclude_path = [
+  "README.md",
+  "_drafts",
+  "_pages/404.md",
+  "_pages/blog.md",
+  "_posts/2018-12-22-distill.md",
+  "_posts/2023-04-24-videos.md",
+  "_books/the_godfather.md",
+]
+
+# Additional host-level ignores live in .lycheeignore (auto-loaded by lychee).
