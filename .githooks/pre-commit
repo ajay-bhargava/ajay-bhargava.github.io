@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Format staged files with Prettier so the "Prettier code formatter" workflow
+# can never fail on main. Enable with: npm run prepare
+set -euo pipefail
+
+files=$(git diff --cached --name-only --diff-filter=ACMR)
+[ -z "$files" ] && exit 0
+
+formatted=$(printf '%s\n' "$files" | xargs -I{} sh -c 'test -f "{}" && echo "{}"' || true)
+[ -z "$formatted" ] && exit 0
+
+printf '%s\n' "$formatted" | xargs npx prettier --ignore-unknown --write
+printf '%s\n' "$formatted" | xargs git add

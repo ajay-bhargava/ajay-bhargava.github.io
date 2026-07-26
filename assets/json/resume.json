@@ -119,9 +119,7 @@
       "startDate": "2020-03",
       "endDate": "2020-10",
       "summary": "Developed GAN pipeline for virtual staining of pathology slides.",
-      "highlights": [
-        "Built GAN + subpixel alignment model for in-silico H&E staining."
-      ]
+      "highlights": ["Built GAN + subpixel alignment model for in-silico H&E staining."]
     }
   ],
   "education": [
@@ -173,9 +171,7 @@
     {
       "name": "Hugging Face Hackathon",
       "summary": "Built Streamlit RAG app for toxicology paper retrieval using Pinecone hybrid search.",
-      "highlights": [
-        "Used PyMuPDF, Pinecone, RAG architecture."
-      ],
+      "highlights": ["Used PyMuPDF, Pinecone, RAG architecture."],
       "startDate": "2023-07",
       "endDate": "2023-07",
       "url": "https://www.linkedin.com/posts/activity-7129288509894356992-EDxz"
@@ -183,9 +179,7 @@
     {
       "name": "Template Repositories",
       "summary": "Automated FastAPI deployment to AWS using Docker, ECR, and Serverless Framework.",
-      "highlights": [
-        "Used GitHub Actions, Lambda, API Gateway."
-      ],
+      "highlights": ["Used GitHub Actions, Lambda, API Gateway."],
       "startDate": "2023-01",
       "endDate": "2023-01",
       "url": "https://github.com/with-context-engine/repository-factory"
@@ -194,85 +188,35 @@
   "skills": [
     {
       "name": "Backend & DevOps",
-      "keywords": [
-        "FastAPI",
-        "CI/CD",
-        "Docker",
-        "Terraform",
-        "AWS",
-        "Serverless"
-      ]
+      "keywords": ["FastAPI", "CI/CD", "Docker", "Terraform", "AWS", "Serverless"]
     },
     {
       "name": "Data Science & ML",
-      "keywords": [
-        "Pytorch",
-        "OCR",
-        "Image Analysis",
-        "MLOps",
-        "Generative AI"
-      ]
+      "keywords": ["Pytorch", "OCR", "Image Analysis", "MLOps", "Generative AI"]
     },
     {
       "name": "Data Platforms",
-      "keywords": [
-        "ElasticSearch",
-        "Qdrant",
-        "Pinecone",
-        "LlamaIndex"
-      ]
+      "keywords": ["ElasticSearch", "Qdrant", "Pinecone", "LlamaIndex"]
     },
     {
       "name": "Programming",
-      "keywords": [
-        "Python",
-        "R",
-        "SQL"
-      ]
+      "keywords": ["Python", "R", "SQL"]
     },
     {
       "name": "Cloud",
-      "keywords": [
-        "AWS Bedrock",
-        "Sagemaker",
-        "GCP",
-        "Cloudwatch"
-      ]
+      "keywords": ["AWS Bedrock", "Sagemaker", "GCP", "Cloudwatch"]
     },
     {
       "name": "AI",
-      "keywords": [
-        "OpenAI",
-        "Fal AI",
-        "LlamaIndex",
-        "Pinecone",
-        "Qdrant",
-        "ElasticSearch"
-      ]
+      "keywords": ["OpenAI", "Fal AI", "LlamaIndex", "Pinecone", "Qdrant", "ElasticSearch"]
     },
     {
       "name": "Tools",
-      "keywords": [
-        "VSCode",
-        "Cursor",
-        "Git",
-        "GitHub",
-        "Docker",
-        "Serverless Framework"
-      ]
+      "keywords": ["VSCode", "Cursor", "Git", "GitHub", "Docker", "Serverless Framework"]
     },
     {
       "name": "Full-Stack",
-      "keywords": [
-        "NextJS",
-        "Typescript",
-        "React",
-        "TailwindCSS",
-        "Supabase",
-        "Convex",
-        "MongoDB",
-        "Redis"
-      ]
+      "keywords": ["NextJS", "Typescript", "React", "TailwindCSS", "Supabase", "Convex", "MongoDB", "Redis"]
     }
   ],
   "publications": [],

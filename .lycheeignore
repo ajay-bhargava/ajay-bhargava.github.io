@@ -1,2 +1,13 @@
+# Hosts that block automated link checking regardless of user agent.
+# Verified manually in a browser; they serve real content.
 linkedin.com
 reddit.com
+researchgate.net
+crick.ac.uk
+bynd.bio
+intmath.com
+stackoverflow.com
+# Hosts with TLS/handshake failures from GitHub runners.
+opportunity-project.eu
+shl-dataset.org
+eecs.qmul.ac.uk

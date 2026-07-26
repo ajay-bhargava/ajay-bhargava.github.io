@@ -19,7 +19,7 @@ I learned that the "hand of crap" isn't a curse it's a consequence of weak ideas
 
 This was liberating.
 
-Suddenly, I wasn't worried about breaking the system. The biology just was. Whether I'd just flown back from Paris or finished a gym session, the phenomena were robust and reproducible.  
+Suddenly, I wasn't worried about breaking the system. The biology just was. Whether I'd just flown back from Paris or finished a gym session, the phenomena were robust and reproducible.
 
 > I'm writing up a manuscript on how the rulebook of spatiotemporal tumor heterogeneity is underwritten by Newtonian physics.
 
