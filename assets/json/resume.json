@@ -18,6 +18,33 @@
   },
   "work": [
     {
+      "name": "Plan Monster",
+      "position": "Co-founder / CTO",
+      "url": "https://planmonster.com",
+      "startDate": "2026-01",
+      "endDate": "",
+      "summary": "Co-founded Plan Monster and built Monty, a channel-native AI assistant across iMessage/SMS, WhatsApp, and web chat.",
+      "highlights": [
+        "Built a Convex control plane connecting multiple customer channels to one assistant brain.",
+        "Designed split architecture: fast Smart Reply responses with BAML and tool-heavy agent runs in Daytona sandboxes using Claude/Pi and MCP tools.",
+        "Shipped operator dashboard, onboarding and identity linking, durable gateway/reply batching, and multi-surface deployment across Convex, Cloudflare, ECS, and Terraform."
+      ]
+    },
+    {
+      "name": "BATS-TOI",
+      "position": "Contract CTO",
+      "url": "",
+      "startDate": "2025-07",
+      "endDate": "2026-01",
+      "summary": "Led product and engineering for Digiyo, a sports social platform, and a Mentra AR football playbook.",
+      "highlights": [
+        "Led end-to-end product and engineering for <a href=\"https://apps.apple.com/id/app/digiyo/id6502759122\">Digiyo</a>, an Expo/React Native and Next.js platform on a Convex realtime backend.",
+        "Shipped highlights, versus/open challenges, invites, chat, notifications, Better Auth, R2 video upload, and native iOS/Android delivery through EAS.",
+        "Built Stripe Connect wallet and PPV checkout, AI challenge posters with Runway, and owned CI, preview deployments, and store releases.",
+        "Built a Mentra AR football playbook with realtime coach-to-player broadcast, blocking/queue state, JWT authentication, and Python scrape-to-animation pipelines."
+      ]
+    },
+    {
       "name": "With Context LLC",
       "position": "Founder",
       "url": "https://consulting.with-context.co",

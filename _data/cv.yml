@@ -25,6 +25,24 @@
 - title: Experience
   type: time_table
   contents:
+    - title: Co-founder / CTO
+      institution: Plan Monster
+      year: Jan 2026 - Present
+      description:
+        - Co-founded Plan Monster; built Monty, a channel-native AI assistant across iMessage/SMS (Linq), WhatsApp, and web chat on a Convex control plane.
+        - Designed split architecture: cheap/fast Smart Reply (BAML) vs tool-heavy agent runs in Daytona sandboxes (Claude/Pi + MCP tools for Gmail/Drive/docs/memory).
+        - Shipped operator dashboard, onboarding/identity linking, durable gateway/reply batching, and multi-surface deploy (Convex, Cloudflare Workers/Pages, ECS, Terraform).
+
+    - title: Contract CTO
+      institution: BATS-TOI
+      year: Jul 2025 - Jan 2026
+      description:
+        - Led end-to-end product/engineering for <a href="https://apps.apple.com/id/app/digiyo/id6502759122">Digiyo</a>, a sports social platform (Expo/React Native + Next.js monorepo on Convex realtime backend).
+        - Shipped Digiyo social core (highlights, versus/open challenges, invites, chat, notifications) with Better Auth, R2 video upload, and native iOS/Android delivery (EAS, TestFlight/App Store).
+        - Built Digiyo monetization (Stripe Connect wallet, PPV checkout) and AI challenge posters (Runway); owned CI, preview deploys, and store-release pipeline.
+        - Built Mentra AR football playbook: coaches/players select plays in a web UI; animations stream frame-by-frame onto AR glasses in realtime via Convex.
+        - Shipped coach→player broadcast, blocking/queue state, JWT auth API (Elysia/Railway), and Python pipelines (scrape → Gemini bitmaps → SVG animation ingest).
+
     - title: Senior Data Architect
       institution: TetraScience, New York, NY
       year: Oct 2022 - Apr 2024

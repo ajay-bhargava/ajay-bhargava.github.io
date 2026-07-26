@@ -31,9 +31,10 @@ After excelling as a bench biochemist and systems biologist, I earned my [Ph.D. 
 
 My career highlights:
 
-1. Built ML tools at [GSK](http://gsk.ai) & [Regeneron](http://www.regeneron.com) for healthcare imaging analysis
-2. Deployed real-time threat detection AI to 20K+ cameras at [Actuate](http://actuate.ai)
-3. Architected platforms handling 100s of TB of scientific data at [TetraScience](https://www.tetrascience.com/)
-4. Founded [Bynd.Bio](https://www.bynd.bio) to revolutionize lab experiment execution with REST APIs
+1. Co-founded [Plan Monster](https://planmonster.com) — Monty, an iMessage-native AI assistant with a multi-channel control plane
+2. Built ML tools at [GSK](http://gsk.ai) & [Regeneron](http://www.regeneron.com) for healthcare imaging analysis
+3. Deployed real-time threat detection AI to 20K+ cameras at [Actuate](http://actuate.ai)
+4. Architected platforms handling 100s of TB of scientific data at [TetraScience](https://www.tetrascience.com/)
+5. Founded [Bynd.Bio](https://www.bynd.bio) to revolutionize lab experiment execution with REST APIs
 
 > I want to build useful, delightful AI products at the intersection of computer vision, software engineering, and biotechnology.
